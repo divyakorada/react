@@ -4,14 +4,20 @@ import Columns from './Columns'
 function Table() {
   return (
     <div className="containerFtn">
-        <h2 className="ctn-head">Fragment</h2>
-        <React.Fragment>
-            <h1>Fragment Demo</h1>
-            <p>This describes the Fragment Demo component</p>
-        </React.Fragment>
-    <table className='fragmentTable'><tbody><tr><Columns/></tr></tbody></table>
-        </div>
-  )
+      <h2 className="ctn-head">Fragment</h2>
+      <React.Fragment>
+        <h1>Fragment Demo</h1>
+        <p>This describes the Fragment Demo component</p>
+      </React.Fragment>
+      <table className="fragmentTable">
+        <tbody>
+          <tr>
+              <Columns/>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default Table

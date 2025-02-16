@@ -51,3 +51,13 @@ text-align: left;
 .fragmentTable tr td{
 padding: 10px;
 }
+nav {
+  padding: 20px;
+}
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+.nav-container{
+  margin: 10px 10px 30px 10px;
+}

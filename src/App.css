@@ -1,3 +1,7 @@
+/* Reduce font size to default */
+body {
+font-size: 16px; /* Adjust as needed */
+}
 .App {
   text-align: center;
 }
@@ -15,12 +19,12 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   color: white;
 }
 
@@ -35,4 +39,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* Override Bootstrap's heading styles if necessary */
+h1, h2, h3, h4, h5, h6 {
+font-size: inherit;
+font-weight: normal;
+}
+
+/* Adjust padding and margin if they are too large */
+.container, .row, .col {
+padding: 0 !important;
+margin: 0 !important;
 }

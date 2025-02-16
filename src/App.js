@@ -18,12 +18,38 @@ import FormHandling from './components/FormHandling';
 import LifeCycleA from './components/LifeCycleA';
 import Table from './components/FragmentDemo/Table';
 import ParentCom from './components/PureComponent/PureComponent&Memo/ParentCom';
-import RefsDemo from './components/Refs/RefsDemo'
+import RefsDemo from './components/Refs/RefsDemo';
+import { BrowserRouter, Routes, Route, Link, Outlet, NavLink } from 'react-router-dom';
+import {Profile} from './components/Authentication/Profile';
+import {AuthProvider} from './components/Authentication/auth';
+import { Login } from './components/Authentication/Login';
+import {Navbar} from './components/Authentication/Navbar';
+import Home from './components/Authentication/Home';
+import About from './components/Authentication/About';
+import RequireAuth from './components/Authentication/RequireAuth';
+import Form from './components/Formvalidation/Form';
+import ProductDashboard from './components/ContentProjection/ProductDashboard';
+
 
 function App() {
+
   return (
+   
     <div className="App">
-      <header className="App-header">
+      <AuthProvider>
+    <BrowserRouter>
+        <Navbar/>
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="profile" element={<RequireAuth><Profile /></RequireAuth>} />
+        <Route path="login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+      </AuthProvider>
+      <ProductDashboard/>
+      <Form/>
+    <header className="App-header">
     {/*<Greet name="test1" city="Hyd"/> */}
       <Greet name="test2" city="Chennai">
         <p className="info">I'm test2 props children</p>
@@ -31,14 +57,11 @@ function App() {
       </Greet>
      {/*  <PropsDestruct name="props" city="Destructuring"/>*/}
        {/*<GreetConst></GreetConst> */}
-       
       {/*  <MyClassComponent name="Test1" city="Hyd"/> */}
        <MyClassComponent name="Test2" city="Chennai">
         <p className="info">I'm test2 props children</p>
        </MyClassComponent>
-
        <Hello></Hello>
-
        <ExplainState/>
        <SetStateCounter/>
        <EventBind/>
@@ -51,18 +74,15 @@ function App() {
        <FormHandling/>
        <LifeCycleA/>
        <Table/>
-
        <ParentCom/>
        <RefsDemo/>
       </header>
     </div>
+   
   );
 }
 
 export default App;
-
-
-
 /* functional, class components, JXS, props, state, setState(), Destructuring*/
 
 /* pros is just an object that contains the attributes &
@@ -90,4 +110,4 @@ A pure component implements shouldComponentUpdate with a shallow prop and state 
 
 /*  rpce (react snippet) => pure class component
  rce => regular class component
- rconst => create constructor */
+ rconst => create constructor */ 
