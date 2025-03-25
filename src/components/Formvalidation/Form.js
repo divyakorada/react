@@ -12,13 +12,13 @@ const Form = () => {
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
-        console.log('target', e.target);
+       // console.log('target', e.target);
         const {name, value} = e.target;
         setFormData({
             ...formData,
             [name]: value
         })
-        console.log('setFormData', formData);
+      //  console.log('setFormData', formData);
 
     }
 
@@ -37,13 +37,29 @@ const Form = () => {
 
     const validateForm = (data) => {
         const errors = {};
-        console.log('data', data);
+     //   console.log('data', data);
 
         if(!data.username.trim()) {
             errors.username = 'Username is required'
         } else if(data.username.length < 4) {
             errors.username = 'Username must be at least 4 characters long'
         }
+        if(!data.email.trim()) {
+            errors.email = "email is required"
+        } else if(!/\S+@\S+\.\S+/.test(data.email)) {
+            errors.email = 'Email is invalid'
+        }
+
+        if(!data.password.trim()) {
+            errors.password = "Password is required"
+        } else if(data.password.length < 8) {
+            errors.password = "Password must be atleat 8 characters long"
+        }
+
+        if(data.confirmPassword !== data.password) {
+            errors.confirmPassword = "Passwords do not match"
+        }
+        
         return errors;
     }
 
@@ -128,3 +144,10 @@ const Form = () => {
 }
 
 export default Form
+
+/*/
+https://stackblitz.com/edit/base-angular-12-app-kwhxggzy?file=src%2Fapp%2Fapp.component.html,src%2Fapp%2Fapp.component.ts
+ Actually, loginForm does have a valid property. The reason the submit
+button is enabling after entering valid values is because Angular's reactive
+forms automatically track form state, including validity.
+https://chatgpt.com/share/67e24d3d-e8f8-8001-a423-8d29afa1cc1d*/

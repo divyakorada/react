@@ -18,8 +18,8 @@ class RefsDemo extends Component {
     componentDidMount() {
         // 1st approach
        this.inputRef.current.focus();
-        console.log('::::Hi', this.inputRef)
-        console.log('::::Hi', this.inputRef.current.focus())
+      //  console.log('::::Hi', this.inputRef)
+      //  console.log('::::Hi', this.inputRef.current.focus())
 
         // 2nd appraoch
         /* if(this.cbRef) {

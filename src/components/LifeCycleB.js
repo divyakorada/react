@@ -8,33 +8,33 @@ class LifeCycleB extends Component {
       this.state = {
          message: 'Divya'
       }
-      console.log('Lifecylce B constructor')
+    //  console.log('Lifecylce B constructor')
     }
 
     static getDerivedStateFromProps(props, state) {
-        console.log('Lifecylce B getDerivedStateFromProps')
+      //  console.log('Lifecylce B getDerivedStateFromProps')
         return null
     }
 
     componentDidMount() {
-        console.log('Lifecylce B componentDidMount')
+     //   console.log('Lifecylce B componentDidMount')
     }
 
     // Updating life cycle methods
        shouldComponentUpdate() {
-        console.log('Lifecylce B should component upate')
+      //  console.log('Lifecylce B should component upate')
         return true
     }
     getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log('Lifecylce B get Snapshot Before Update')
+       // console.log('Lifecylce B get Snapshot Before Update')
         return null
     }    
     componentDidUpdate() {
-        console.log('Lifecylce B Component did update')
+      //  console.log('Lifecylce B Component did update')
     }
     
   render() {
-    console.log('Lifecylce B render')
+  //  console.log('Lifecylce B render')
     return (
         <div>
             <div>Life cycle B</div>

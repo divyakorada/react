@@ -12,7 +12,7 @@ import React from "react";
 
 // Props
 const Greet = props => {
-    console.log('props::::', props)
+  //  console.log('props::::', props)
     return (
         <div className="containerFtn">
             <h2 className="ctn-head">Functional component</h2>

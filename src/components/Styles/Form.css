@@ -22,11 +22,12 @@ display: block;
 margin-bottom: 5px;
 font-weight: bold;
 color: #333;
+text-align: left;
 }
 
 .form-input {
 width: 100%;
-padding: 10px;
+padding: 7px;
 margin-bottom: 10px;
 border: 1px solid #ccc;
 border-radius: 5px;
@@ -39,6 +40,8 @@ color: red;
 font-size: 12px;
 margin-top: -10px;
 margin-bottom: 10px;
+text-align: left;
+display: block;
 }
 
 .submit-button {

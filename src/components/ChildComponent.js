@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ChildComponent(props) {
-    console.log('child::::', props);
+  //  console.log('child::::', props);
   return (
     <div>
         {/*<button onClick={props.greetHandler}>Click me</button> */}

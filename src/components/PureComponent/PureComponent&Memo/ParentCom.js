@@ -25,7 +25,7 @@ componentDidMount() {
     
 
   render() {
-    console.log('*********parent component render***********')
+  //  console.log('*********parent component render***********')
     return (
       <div className="containerFtn">
            <h2 className="ctn-head">Pure class component & Memo functional component</h2>

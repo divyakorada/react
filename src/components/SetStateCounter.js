@@ -25,7 +25,7 @@ increment() {
         count: prevStae.count + 1
     }))
 
-    console.log("this", this.state.count);
+  //  console.log("this", this.state.count);
 }
 
 incrementFive() {

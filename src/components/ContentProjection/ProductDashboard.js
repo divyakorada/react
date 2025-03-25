@@ -51,3 +51,6 @@ export default ProductDashboard
 
 // https://chatgpt.com/share/67b1d0de-f308-8001-accb-11dc56c5f00f
 
+// https://stackblitz.com/edit/content-projection-with-react?file=src%2FApp.tsx,src%2FCard.tsx
+
+

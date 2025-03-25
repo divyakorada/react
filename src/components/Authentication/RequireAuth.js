@@ -4,10 +4,10 @@ import { useAuth } from './auth'
  const RequireAuth = ({ children }) => {
     const auth = useAuth()
     const location = useLocation()
-    console.log('auth', auth);
+  //  console.log('auth', auth);
     if(!auth.user) {
        
-        console.log('localtion', location);
+    //    console.log('localtion', location);
         return <Navigate to='/login' state={{path: location.pathname}}/>
     }
 

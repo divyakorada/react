@@ -51,3 +51,23 @@ font-weight: normal;
 padding: 0 !important;
 margin: 0 !important;
 }
+.main-Wrapper-Api {
+margin: 20px;
+flex: 1;
+
+}
+.api-container {
+  display: flex;
+}
+.divScroll {
+height: 300px;
+overflow: auto;
+}
+.data-communication-ctn {
+  margin: 0 10% 3%;
+}
+.data-communication-ctn .wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}

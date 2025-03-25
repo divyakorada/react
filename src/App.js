@@ -1,85 +1,118 @@
-import logo from './logo.svg';
-import './App.css';
-import {Greet, PropsDestruct} from './components/Funtional-component';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect } from "react";
+import { Greet, PropsDestruct } from "./components/Funtional-component";
 /* import { GreetConst } from './components/Greet'; */
-import MyClassComponent from './components/Class-component';
-import Hello from './components/Test-jsx';
-import ExplainState from './components/State';
-import SetStateCounter from './components/SetStateCounter';
-import EventBind from './components/EventBind';
-import ParentComponent from './components/ParentComponent';
-import ConditionalRendering from './components/ConditionalRendering'
-import ListRendering from './components/ListRendering'
-import Stylesheet from './components/Styles/Stylesheet';
-import Inline from './components/Styles/Inline';
-import styles from './components/Styles/appStyles.module.css'
-import './components/Styles/externalStyleSheet.css'
-import FormHandling from './components/FormHandling';
-import LifeCycleA from './components/LifeCycleA';
-import Table from './components/FragmentDemo/Table';
-import ParentCom from './components/PureComponent/PureComponent&Memo/ParentCom';
-import RefsDemo from './components/Refs/RefsDemo';
-import { BrowserRouter, Routes, Route, Link, Outlet, NavLink } from 'react-router-dom';
-import {Profile} from './components/Authentication/Profile';
-import {AuthProvider} from './components/Authentication/auth';
-import { Login } from './components/Authentication/Login';
-import {Navbar} from './components/Authentication/Navbar';
-import Home from './components/Authentication/Home';
-import About from './components/Authentication/About';
-import RequireAuth from './components/Authentication/RequireAuth';
-import Form from './components/Formvalidation/Form';
-import ProductDashboard from './components/ContentProjection/ProductDashboard';
-
+import MyClassComponent from "./components/Class-component";
+import Hello from "./components/Test-jsx";
+import ExplainState from "./components/State";
+import SetStateCounter from "./components/SetStateCounter";
+import EventBind from "./components/EventBind";
+import ParentComponent from "./components/ParentComponent";
+import ConditionalRendering from "./components/ConditionalRendering";
+import ListRendering from "./components/ListRendering";
+import Stylesheet from "./components/Styles/Stylesheet";
+import Inline from "./components/Styles/Inline";
+import styles from "./components/Styles/appStyles.module.css";
+import "./components/Styles/externalStyleSheet.css";
+import FormHandling from "./components/FormHandling";
+import LifeCycleA from "./components/LifeCycleA";
+import Table from "./components/FragmentDemo/Table";
+import ParentCom from "./components/PureComponent/PureComponent&Memo/ParentCom";
+import RefsDemo from "./components/Refs/RefsDemo";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Outlet,
+  NavLink,
+} from "react-router-dom";
+import { Profile } from "./components/Authentication/Profile";
+import { AuthProvider } from "./components/Authentication/auth";
+import { Login } from "./components/Authentication/Login";
+import { Navbar } from "./components/Authentication/Navbar";
+import Home from "./components/Authentication/Home";
+import About from "./components/Authentication/About";
+import RequireAuth from "./components/Authentication/RequireAuth";
+import Form from "./components/Formvalidation/Form";
+import ProductDashboard from "./components/ContentProjection/ProductDashboard";
+import ShowUsers from "./components/FetchDataFromAPI/ShowUsers";
+// import FunctionalParent from "./components/DataCommunication/Functional/Parent";
+// import ClassParent from "./components/DataCommunication/Class/Parent";
+import {Todos, AxiosPackage, CustomHookFetch, UserList} from "./components/FetchDataFromAPI/Todos";
+import FunctionalChild from "./components/DataCommunication/Functional/Child";
+import Datacommunication from "./components/DataCommunication/Datacommunication";
 
 function App() {
-
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0); // Ensure page always starts at the top
+  }, []);
   return (
-   
     <div className="App">
       <AuthProvider>
-    <BrowserRouter>
-        <Navbar/>
-        <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="profile" element={<RequireAuth><Profile /></RequireAuth>} />
-        <Route path="login" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route
+              path="profile"
+              element={
+                <RequireAuth>
+                  <Profile />
+                </RequireAuth>
+              }
+            />
+            <Route path="login" element={<Login />} />
+          </Routes>
+        </BrowserRouter>
       </AuthProvider>
-      <ProductDashboard/>
-      <Form/>
-    <header className="App-header">
-    {/*<Greet name="test1" city="Hyd"/> */}
-      <Greet name="test2" city="Chennai">
-        <p className="info">I'm test2 props children</p>
-        <button className="button-cls">Click me</button>
-      </Greet>
-     {/*  <PropsDestruct name="props" city="Destructuring"/>*/}
-       {/*<GreetConst></GreetConst> */}
-      {/*  <MyClassComponent name="Test1" city="Hyd"/> */}
-       <MyClassComponent name="Test2" city="Chennai">
-        <p className="info">I'm test2 props children</p>
-       </MyClassComponent>
-       <Hello></Hello>
-       <ExplainState/>
-       <SetStateCounter/>
-       <EventBind/>
-       <ParentComponent/>
-       <ConditionalRendering/>
-       <ListRendering/>
-       <Stylesheet color={true}/>
-       <Inline/>
-       <div className={styles.success}>Module CSS</div>
-       <FormHandling/>
-       <LifeCycleA/>
-       <Table/>
-       <ParentCom/>
-       <RefsDemo/>
+      <ProductDashboard />
+      <div className="flex api-container">
+        <ShowUsers />
+        <Todos/>
+        <AxiosPackage/>
+        <UserList/>
+      </div>
+      <Form />
+      <Datacommunication/>
+     
+
+      <header className="App-header">
+        {/*<Greet name="test1" city="Hyd"/> */}
+        <Greet name="test2" city="Chennai">
+          <p className="info">I'm test2 props children</p>
+          <button className="button-cls">Click me</button>
+        </Greet>
+        {/*  <PropsDestruct name="props" city="Destructuring"/>*/}
+        {/*<GreetConst></GreetConst> */}
+        {/*  <MyClassComponent name="Test1" city="Hyd"/> */}
+        <MyClassComponent name="Test2" city="Chennai">
+          <p className="info">I'm test2 props children</p>
+        </MyClassComponent>
+        <Hello></Hello>
+        <ExplainState />
+        <SetStateCounter />
+        <EventBind />
+        <ParentComponent />
+        <ConditionalRendering />
+        <ListRendering />
+        <Stylesheet color={true} />
+        <Inline />
+        <div className={styles.success}>Module CSS</div>
+        <FormHandling />
+        <LifeCycleA />
+        <Table />
+        <ParentCom />
+        <RefsDemo />
       </header>
     </div>
-   
   );
+
 }
 
 export default App;
@@ -103,11 +136,10 @@ getDerivedStateFromProps(props, state): This is static method. It doesn't have a
 render(): It is a pure function
 */
 
-
 /* pure components prevents unneccessary renders can give you performace boot in certain scenarios.
 A pure component implements shouldComponentUpdate with a shallow prop and state comparison. */
 
-
 /*  rpce (react snippet) => pure class component
  rce => regular class component
- rconst => create constructor */ 
+ rafce => react arrow function Export component
+ rconst => create constructor */
