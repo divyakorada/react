@@ -64,10 +64,28 @@ height: 300px;
 overflow: auto;
 }
 .data-communication-ctn {
-  margin: 0 10% 3%;
+  margin: 0 5% 3%;
 }
 .data-communication-ctn .wrapper {
   display: flex;
   justify-content: center;
   margin-top: 25px;
+}
+.dcw-ctn {
+border: 1px solid #b1b1b1;
+/* width: 30%; */
+margin: 0 15px;
+border-radius: 5px;
+padding: 16px
+}
+.dcw-ctn .dcw-sibling-ctn {
+border: 1px solid #b5b5c4;
+padding: 20px;
+margin: 22px 0;
+}
+.hoc-wrapper, .props-wrapper, .error-boundary-wrapper {
+  padding: 10px;
+  width: 30%;
+  margin: 0 auto 10px;
+  border: 1px solid #b1b1b1;
 }

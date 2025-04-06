@@ -43,6 +43,12 @@ import ShowUsers from "./components/FetchDataFromAPI/ShowUsers";
 import {Todos, AxiosPackage, CustomHookFetch, UserList} from "./components/FetchDataFromAPI/Todos";
 import FunctionalChild from "./components/DataCommunication/Functional/Child";
 import Datacommunication from "./components/DataCommunication/Datacommunication";
+import {BorderedMessage, EnhancedComponent, FinalComponent} from "./components/HOC/Hoc";
+import Hooks from "./components/Hooks/Hooks";
+import CommonProps from "./components/Props/Props";
+import { BuggyComponent, ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
+import CounterComponent from "./components/ErrorBoundary/counterComponent";
+
 
 function App() {
   useEffect(() => {
@@ -51,6 +57,7 @@ function App() {
     }
     window.scrollTo(0, 0); // Ensure page always starts at the top
   }, []);
+  //console.log(useCount)
   return (
     <div className="App">
       <AuthProvider>
@@ -80,7 +87,12 @@ function App() {
       </div>
       <Form />
       <Datacommunication/>
-     
+      <FinalComponent/>
+      <Hooks/>
+    <CommonProps/>
+    <ErrorBoundary>
+      <CounterComponent/>
+    </ErrorBoundary>
 
       <header className="App-header">
         {/*<Greet name="test1" city="Hyd"/> */}

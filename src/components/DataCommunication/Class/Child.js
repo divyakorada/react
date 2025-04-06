@@ -11,11 +11,11 @@ export class ClassChild extends Component {
   render() {
     return (
       <div>
-        <h3>Child</h3>
+        <h5>Child</h5>
         <div style={{color: this.props.userColor}}>Greeks for Greeks</div>
         <div style={{color: this.props.adminColor}}>Welcome to React</div>
 
-        <form onSubmit={this.onTrigger}>
+        <form onSubmit={this.onTrigger} style={{marginBottom:" 15px"}}>
             <input type='text' placeholder='Enter Name' name="myname"/>
             <button type='submit' value="Submit">Submit</button>
         </form>

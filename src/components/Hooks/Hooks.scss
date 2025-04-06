@@ -1,0 +1,42 @@
+.hooks {
+  &__outerCtn {
+    padding: 10px 0;
+  }
+  &__ctn {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px 10px;
+    display: flex;
+    align-items: center;
+  }
+  &__usecontext {
+  align-items: center;
+  }
+  &__useRef {
+    display: block;
+  }
+  &__useRef2 {
+    display: grid;
+    button {
+    display: inline;
+    }
+  }
+}
+.flex {
+  justify-content: center;
+  display: flex;
+  // align-items: center;
+}
+
+.usememo {
+  &__ctn {
+    //background-color: #e0e0e0;
+    padding: 20px;
+  }
+}
+
+.usecontenxt {
+  &__wrapper{
+  margin: 20px;
+  }
+}
