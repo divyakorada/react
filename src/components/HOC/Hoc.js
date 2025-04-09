@@ -1,14 +1,16 @@
 // // Higher-Order Component (HOC)
 const withBorder = (WrappedComponent) => {
-  
-    return (props) => (
-      <div className="">
-      <h3>HOC</h3>
-      <div style={{ border: "2px solid blue", padding: "10px", borderRadius: "5px" }}>
-        <WrappedComponent {...props} />
-      </div>
-      </div>
-    );
+
+    return (props) => { 
+      console.log("Props in HOC:", props); // Log props here
+      return (
+        <div className="">
+        <h3>HOC</h3>
+        <div style={{ border: "2px solid blue", padding: "10px", borderRadius: "5px" }}>
+          <WrappedComponent {...props} />
+        </div>
+        </div>
+    )};
   };
   
   // Regular Component
@@ -45,7 +47,7 @@ const withExtraProp = (WrappedComponent) => {
       <BorderedMessage text="Hello, this is inside a border!" showName="Name"/>
       <EnhancedComponent />
     </div>
-    )
+    ) 
   }
 
   export  {FinalComponent};

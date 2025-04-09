@@ -1,4 +1,4 @@
-import { useMemo, useState, memo, React } from "react";
+import { useMemo, useState, memo, React, useCallback } from "react";
 
 const Child = memo(({ userInfo }) => {
   console.log("Child component rendered 2");
@@ -50,6 +50,40 @@ function ReactMemoExample2() {
   );
 }
 
-export { ReactMemoExample1, ReactMemoExample2 };
+//Example 3
+const ListItem = memo(({ item, onClick }) => {
+  return (
+    <li onClick={() => onClick(item.id)} style={{ cursor: "pointer" }}>
+      {item.text}
+    </li>
+  );
+});
+
+function ReactMemoExampleItemList() {
+  const [Items, setItems] = useState([
+    { id: 1, text: "🍎 Apple" },
+    { id: 2, text: "🍌 Banana" },
+    { id: 3, text: "🍇 Grape" },
+  ]);
+
+  const updateItem = useCallback((id) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, text: item.text + " (clicked)" } : item
+      )
+    );
+  }, []);
+
+  return (
+    <ul>
+      {Items &&
+        Items.map((item) => (
+          <ListItem key={item.id} item={item} onClick={updateItem} />
+        ))}
+    </ul>
+  );
+}
+
+export { ReactMemoExample1, ReactMemoExample2, ReactMemoExampleItemList };
 
 // https://www.geeksforgeeks.org/difference-between-react-memo-and-usememo-in-react/#what-is-reactmemo-

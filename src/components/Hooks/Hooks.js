@@ -5,7 +5,7 @@ import {
   UseMemoExample3,
   UseMemoExample4,
 } from "./useMemo";
-import { ReactMemoExample1, ReactMemoExample2 } from "./ReactMemo";
+import { ReactMemoExample1, ReactMemoExample2, ReactMemoExampleItemList } from "./ReactMemo";
 import {
   UseCallbackEample1,
   UseCallbackExample2,
@@ -51,7 +51,7 @@ const Hooks = () => {
       <div className="hooks__outerCtn">
         <h3>React.memo()</h3>
         <div className="flex">
-          {[ReactMemoExample1, ReactMemoExample2].map((Component, index) => {
+          {[ReactMemoExample1, ReactMemoExample2, ReactMemoExampleItemList].map((Component, index) => {
             return (
               <div className="hooks__ctn" key={index}>
                 <Component />

@@ -89,3 +89,15 @@ margin: 22px 0;
   margin: 0 auto 10px;
   border: 1px solid #b1b1b1;
 }
+.component-type-wrapper {
+  display: flex;
+  justify-content: center;
+  .controlled-wrapper, .uncontrolled-wrapper {
+    border: 1px solid #b1b1b1;
+    padding: 10px;
+    margin: 10px;
+  }
+}
+.props-wrapper .pink {
+    background: pink;
+}

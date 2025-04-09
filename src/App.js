@@ -48,6 +48,9 @@ import Hooks from "./components/Hooks/Hooks";
 import CommonProps from "./components/Props/Props";
 import { BuggyComponent, ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 import CounterComponent from "./components/ErrorBoundary/counterComponent";
+import Common from "./components/Controlled & Uncontrolled components.js/Common";
+import Key from "./components/key/Key";
+import Portal from "./components/Portals/Portal";
 
 
 function App() {
@@ -60,6 +63,7 @@ function App() {
   //console.log(useCount)
   return (
     <div className="App">
+      <div id="portal-root"></div>
       <AuthProvider>
         <BrowserRouter>
           <Navbar />
@@ -93,6 +97,9 @@ function App() {
     <ErrorBoundary>
       <CounterComponent/>
     </ErrorBoundary>
+    <Common/>
+    <Key/>
+    <Portal/>
 
       <header className="App-header">
         {/*<Greet name="test1" city="Hyd"/> */}

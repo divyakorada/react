@@ -1,7 +1,7 @@
 import React, { useState, useCallback, memo } from "react";
 
 const Child = React.memo(({ a }) => {
-  //  console.log("useCallback Child re-rendered!");
+    console.log("UseCallback Rendering Child!");
   return <button onClick={a}>Click me</button>;
 });
 
