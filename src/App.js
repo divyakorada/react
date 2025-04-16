@@ -26,29 +26,29 @@ import {
   Link,
   Outlet,
   NavLink,
+  Navigate,
 } from "react-router-dom";
 import { Profile } from "./components/Authentication/Profile";
 import { AuthProvider } from "./components/Authentication/auth";
 import { Login } from "./components/Authentication/Login";
 import { Navbar } from "./components/Authentication/Navbar";
-import Home from "./components/Authentication/Home";
-import Interview from "./components/Authentication/Interview";
-//import About from "./components/Authentication/About";
 import RequireAuth from "./components/Authentication/RequireAuth";
-import Form from "./components/Formvalidation/Form";
-import ProductDashboard from "./components/ContentProjection/ProductDashboard";
-import ShowUsers from "./components/FetchDataFromAPI/ShowUsers";
-import {Todos, AxiosPackage, CustomHookFetch, UserList} from "./components/FetchDataFromAPI/Todos";
-import FunctionalChild from "./components/DataCommunication/Functional/Child";
-import Datacommunication from "./components/DataCommunication/Datacommunication";
-import {BorderedMessage, EnhancedComponent, FinalComponent} from "./components/HOC/Hoc";
-import Hooks from "./components/Hooks/Hooks";
-import CommonProps from "./components/Props/Props";
-import { BuggyComponent, ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
-import CounterComponent from "./components/ErrorBoundary/counterComponent";
-import Common from "./components/Controlled & Uncontrolled components.js/Common";
-import RenderList from "./components/List/RenderList";
-import Portal from "./components/Portals/Portal";
+import Round1 from "./components/Interview/Round1";
+import Round2 from "./components/Interview/Round2";
+import Round3 from "./components/Interview/Round3";
+import InterviewLayout from "./components/Interview/InterviewLayout";
+import HomeLayout from "./components/Home/HomeLayout";
+import ContentProjectionTab from "./components/Home/ContentProjection";
+import DataCommunicationTab from "./components/Home/DataCommunication";
+import HocTab from "./components/Home/HocTab";
+import HookTab from "./components/Home/Hook";
+import ErrorBoundaryTab from "./components/Home/ErrorBondary";
+import PropsTab from "./components/Home/Props";
+import ListTab from "./components/Home/List";
+import PortalTab from "./components/Home/Portal";
+import ControlledUncontrolledTab from "./components/Home/Controlled & Uncontrolled";
+import MakeAPITab from "./components/Home/MakeAPI";
+import FormTab from "./components/Home/Form";
 const LazyAbout  = lazy(() => import('./components/Authentication/About'));
 
 
@@ -67,13 +67,37 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            {/* Home and its nested routes */}
+            <Route path="/" element={<HomeLayout />} >
+              <Route index element={<Navigate to="ContentProjectionTab" replace />}></Route>
+              <Route path="ContentProjectionTab" element={<ContentProjectionTab />}></Route>
+              <Route path= "MakeAPITab" element={<MakeAPITab />}></Route>
+              <Route path= "FormTab" element={<FormTab />}></Route>
+              <Route path= "DataCommunicationTab" element={<DataCommunicationTab />}></Route>
+              <Route path= "HocTab" element={<HocTab />}></Route>
+              <Route path= "HooksTab" element={<HookTab />}></Route>
+              <Route path= "PropsTab" element={<PropsTab />}></Route>
+              <Route path= "ErrorBoundaryTab" element={<ErrorBoundaryTab />}></Route>
+              <Route path= "ControlledUncontrolledTab" element={<ControlledUncontrolledTab />}></Route>
+              <Route path= "ListTab" element={<ListTab />}></Route>
+              <Route path= "PortalTab" element={<PortalTab />}></Route>
+            </Route>
+          {/* Home and its nested routes */}  
+          {/* Interview and its nested routes */}
+          <Route path="interview" element={<InterviewLayout/>} >
+            <Route index element={<Navigate to="round1" replace />}></Route>
+            <Route path="round1" element={<Round1 />}></Route>
+            <Route path= "round2" element={<Round2 />}></Route>
+            <Route path= "round3" element={<Round3 />}></Route>
+          </Route>
+          {/* Interview and its nested routes */}
+          
             <Route path="about" element={
             <Suspense fallback='Loading...'>
               <LazyAbout />
             </Suspense>
             } />
-            <Route path="interview" element={<Interview />} />
+          
             <Route
               path="profile"
               element={
@@ -86,34 +110,16 @@ function App() {
           </Routes>
         </BrowserRouter>
       </AuthProvider>
-      <ProductDashboard />
-      <div className="flex api-container">
-        <ShowUsers />
-        <Todos/>
-        <AxiosPackage/>
-        <UserList/>
-      </div>
-      <Form />
-      <Datacommunication/>
-      <FinalComponent/>
-      <Hooks/>
-    <CommonProps/>
-    <ErrorBoundary>
-      <CounterComponent/>
-    </ErrorBoundary>
-    <Common/>
-    <RenderList/>
-    <Portal/>
 
-      <header className="App-header">
-        {/*<Greet name="test1" city="Hyd"/> */}
+     {/* <header className="App-header">
+        {/~<Greet name="test1" city="Hyd"/> ~/}
         <Greet name="test2" city="Chennai">
           <p className="info">I'm test2 props children</p>
           <button className="button-cls">Click me</button>
         </Greet>
-        {/*  <PropsDestruct name="props" city="Destructuring"/>*/}
-        {/*<GreetConst></GreetConst> */}
-        {/*  <MyClassComponent name="Test1" city="Hyd"/> */}
+        {/~  <PropsDestruct name="props" city="Destructuring"/>~/}
+        {/~<GreetConst></GreetConst> ~/}
+        {/~  <MyClassComponent name="Test1" city="Hyd"/> ~/}
         <MyClassComponent name="Test2" city="Chennai">
           <p className="info">I'm test2 props children</p>
         </MyClassComponent>
@@ -132,7 +138,7 @@ function App() {
         <Table />
         <ParentCom />
         <RefsDemo />
-      </header>
+      </header>*/}
     </div>
   );
 

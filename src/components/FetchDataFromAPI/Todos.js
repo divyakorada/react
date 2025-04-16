@@ -16,7 +16,7 @@ export const Todos = () => {
     }, []) //Runs only for the first time
     return (
         <div className='main-Wrapper-Api'>
-        <h2>UseEffect fetch method</h2>
+        <h5>UseEffect fetch method</h5>
         <ul className='list-group divScroll'>
             {todos?.map(todo => 
             <li className='list-group-item' key={todo.id}><strong>{todo.title}</strong>- {todo.completed ? "✅ Completed" : "❌ Not Completed"}</li>
@@ -40,7 +40,7 @@ export const Todos = () => {
 
   return (
     <div className='main-Wrapper-Api'>
-      <h2>useEffect Axios fetch</h2>
+      <h5>useEffect Axios fetch</h5>
       <ul className='list-group divScroll'>
         {todos?.map(todo => 
         <li className='list-group-item' key={todo.id}><strong>{todo.title}</strong>- 
@@ -87,7 +87,7 @@ export const UserList = () => {
 
   return (
     <div className='main-Wrapper-Api'>
-      <h2>Custom hook fetch</h2>
+      <h5>Custom hook fetch</h5>
     <ul className='list-group divScroll'>
       {data.map((user) => (
         <li key={user.id} className='list-group-item'>{user.name}</li>

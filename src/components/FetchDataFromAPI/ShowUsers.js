@@ -44,7 +44,7 @@ export default class ShowUsers extends Component {
 
     return (
       <div className="main-Wrapper-Api">
-        <h3>Fetch data from an api in react</h3>
+        <h5>Fetch data from an api in react</h5>
 
           <ul className="list-group divScroll">
             {items?.map((item) => (
