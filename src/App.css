@@ -83,7 +83,7 @@ border: 1px solid #b5b5c4;
 padding: 20px;
 margin: 22px 0;
 }
-.hoc-wrapper, .props-wrapper, .error-boundary-wrapper {
+.hoc-wrapper, .props-wrapper, .error-boundary-wrapper, .render-list-wrapper {
   padding: 10px;
   width: 30%;
   margin: 0 auto 10px;

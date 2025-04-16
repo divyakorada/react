@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
+import {React, Suspense, lazy} from "react";
 import "./App.css";
 import { useEffect } from "react";
 import { Greet, PropsDestruct } from "./components/Funtional-component";
-/* import { GreetConst } from './components/Greet'; */
 import MyClassComponent from "./components/Class-component";
 import Hello from "./components/Test-jsx";
 import ExplainState from "./components/State";
@@ -33,13 +32,12 @@ import { AuthProvider } from "./components/Authentication/auth";
 import { Login } from "./components/Authentication/Login";
 import { Navbar } from "./components/Authentication/Navbar";
 import Home from "./components/Authentication/Home";
-import About from "./components/Authentication/About";
+import Interview from "./components/Authentication/Interview";
+//import About from "./components/Authentication/About";
 import RequireAuth from "./components/Authentication/RequireAuth";
 import Form from "./components/Formvalidation/Form";
 import ProductDashboard from "./components/ContentProjection/ProductDashboard";
 import ShowUsers from "./components/FetchDataFromAPI/ShowUsers";
-// import FunctionalParent from "./components/DataCommunication/Functional/Parent";
-// import ClassParent from "./components/DataCommunication/Class/Parent";
 import {Todos, AxiosPackage, CustomHookFetch, UserList} from "./components/FetchDataFromAPI/Todos";
 import FunctionalChild from "./components/DataCommunication/Functional/Child";
 import Datacommunication from "./components/DataCommunication/Datacommunication";
@@ -49,8 +47,9 @@ import CommonProps from "./components/Props/Props";
 import { BuggyComponent, ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
 import CounterComponent from "./components/ErrorBoundary/counterComponent";
 import Common from "./components/Controlled & Uncontrolled components.js/Common";
-import Key from "./components/key/Key";
+import RenderList from "./components/List/RenderList";
 import Portal from "./components/Portals/Portal";
+const LazyAbout  = lazy(() => import('./components/Authentication/About'));
 
 
 function App() {
@@ -69,7 +68,12 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
+            <Route path="about" element={
+            <Suspense fallback='Loading...'>
+              <LazyAbout />
+            </Suspense>
+            } />
+            <Route path="interview" element={<Interview />} />
             <Route
               path="profile"
               element={
@@ -98,7 +102,7 @@ function App() {
       <CounterComponent/>
     </ErrorBoundary>
     <Common/>
-    <Key/>
+    <RenderList/>
     <Portal/>
 
       <header className="App-header">
