@@ -2,7 +2,7 @@ import CommonProps from "../Props/Props";
 
 const PropsTab = () => {
     return(
-        <div>
+        <div className="flex">
             <CommonProps/>
             </div>
     )

@@ -18,7 +18,7 @@ const Form = () => {
             ...formData,
             [name]: value
         })
-      //  console.log('setFormData', formData);
+        console.log('setFormData', formData);
 
     }
 

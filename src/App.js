@@ -85,8 +85,8 @@ function App() {
           {/* Home and its nested routes */}  
           {/* Interview and its nested routes */}
           <Route path="interview" element={<InterviewLayout/>} >
-            <Route index element={<Navigate to="round1" replace />}></Route>
-            <Route path="round1" element={<Round1 />}></Route>
+            <Route index element={<Navigate to="Debounce" replace />}></Route>
+            <Route path="Debounce" element={<Round1 />}></Route>
             <Route path= "round2" element={<Round2 />}></Route>
             <Route path= "round3" element={<Round3 />}></Route>
           </Route>

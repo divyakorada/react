@@ -1,5 +1,6 @@
 import ClsButton from "./ClassProps";
 import FunButton from "./FunctionProps";
+import './Props.scss'
 
 function CommonProps() {
   const color = {
@@ -13,13 +14,22 @@ function CommonProps() {
     }
 }
   return (
+    <>
     <div className="props-wrapper">
-    <h3>Props</h3>
+    <h3>Class</h3>
+      <div>
       <ClsButton style={color.red} onClick={() => alert("Clicked")}>Click me!</ClsButton>
-      <ClsButton style={color.blue} onClick={() => alert("Another one")}>Submit</ClsButton>
+      {/* <ClsButton style={color.blue} onClick={() => alert("Another one")}>Submit</ClsButton> */}
+      </div>
 
-     <FunButton color="pink" onClick={() => alert('Hi im from function')}>Click me!</FunButton>
     </div>
+  <div className="props-wrapper">
+  <div>
+  <h3>Functional</h3>
+     <FunButton color="pink" btnClick={() => alert('Hi im from function')}>Click me!</FunButton>
+     </div>
+  </div>
+  </>
   );
 }
 

@@ -53,4 +53,29 @@ const ListRender2 = () => {
   );
 };
 
-export { ListRender1, ListRender2 };
+
+
+const ListRender3 = ({a}) => {
+
+const [isVisible, setIsVisible] = useState(false)
+const expand = () => {
+  setIsVisible(!isVisible)
+}
+return(
+  <div style={{ paddingLeft: 10 }}>
+    <h5>Recursion</h5>
+    <span onClick={expand}>{a.name}</span>
+  
+    {isVisible &&
+      a?.children?.map((e) => {
+        return (
+          <div style={{ paddingLeft: 10 }}>
+            <ListRender3 a={e} />
+          </div>
+        );
+      })}
+  </div>
+  )
+}
+
+export { ListRender1, ListRender2, ListRender3 };

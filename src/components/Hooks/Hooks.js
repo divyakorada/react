@@ -19,6 +19,7 @@ import {
   ThemeProvider,
 } from "./useContext";
 import { Counter, InputFocus, HighlightTextarea, ButtonClick, MyRefClassComponent } from "./useRef";
+import Users from "./Users"
 
 const Hooks = () => {
   return (
@@ -97,8 +98,15 @@ const Hooks = () => {
           <ButtonClick/>
           <MyRefClassComponent/>
         </div>
-      
       </div>
+
+      <div className="hooks__outerCtn">
+        <h3>Custom Hook</h3>
+        <div className="hooks__usecontext flex">
+         <Users />
+        </div>
+      </div>
+
     </div>
   );
 };

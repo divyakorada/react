@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+
+
 // // Higher-Order Component (HOC)
 const withBorder = (WrappedComponent) => {
 
@@ -50,7 +53,38 @@ const withExtraProp = (WrappedComponent) => {
     ) 
   }
 
-  export  {FinalComponent};
+// /Show API response
+  function HigherOrder (title,Component, request) {
+    return function HOC() {
+      const [data, setData] = useState([]);
+
+      const getData = async () => {
+        let data = await fetch(`https://jsonplaceholder.typicode.com/${request}`)
+        .then((response) => {
+          return response;
+        })
+        .catch((err) => {
+          return err;
+        });
+        console.log('hi', data)
+        setData(await data.json())
+      };
+
+      useEffect(() => {
+        getData()
+      }, [])
+
+      return (
+        <div>
+          <h2>{title}</h2>
+          <Component x={data}/>
+        </div>
+      )
+
+    }
+  }
+
+  export  {FinalComponent, HigherOrder};
 
 // https://chatgpt.com/share/67b1d0de-f308-8001-accb-11dc56c5f00f
 // https://chatgpt.com/share/67e2e8f5-c84c-8001-be82-ad23c9347018
