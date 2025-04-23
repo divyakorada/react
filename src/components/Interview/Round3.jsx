@@ -1,6 +1,12 @@
+import CodeSplitting from "../CodeSplitting/CodeSplitting";
+import CodeSplitting2 from "../CodeSplitting/CodeSplitting2";
+
 const Round3 = () => {
     return(
-        <div>This is Interview Round 3</div>
+        <div>
+            <CodeSplitting/>
+            <CodeSplitting2 />
+        </div>
     )
 }
 

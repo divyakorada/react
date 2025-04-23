@@ -87,3 +87,5 @@ function ReactMemoExampleItemList() {
 export { ReactMemoExample1, ReactMemoExample2, ReactMemoExampleItemList };
 
 // https://www.geeksforgeeks.org/difference-between-react-memo-and-usememo-in-react/#what-is-reactmemo-
+
+// https://chatgpt.com/c/67f4ecfd-4fe0-8001-8931-4758b899ee05

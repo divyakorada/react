@@ -49,6 +49,7 @@ import PortalTab from "./components/Home/Portal";
 import ControlledUncontrolledTab from "./components/Home/Controlled & Uncontrolled";
 import MakeAPITab from "./components/Home/MakeAPI";
 import FormTab from "./components/Home/Form";
+import SearchFilter from "./components/Interview/SearchFilter";
 const LazyAbout  = lazy(() => import('./components/Authentication/About'));
 
 
@@ -89,6 +90,7 @@ function App() {
             <Route path="Debounce" element={<Round1 />}></Route>
             <Route path= "round2" element={<Round2 />}></Route>
             <Route path= "round3" element={<Round3 />}></Route>
+            <Route path= "SearchFilter" element={<SearchFilter />}></Route>
           </Route>
           {/* Interview and its nested routes */}
           

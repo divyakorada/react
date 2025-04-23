@@ -1,0 +1,14 @@
+.search {
+    &__wrp {
+        width: 300px;
+       
+        margin: 0 20px;
+        padding: 20px;
+    }
+    &__list-wrp {
+    height: 400px;
+    overflow: auto;
+    border: 1px solid rgb(101, 101, 101);
+    margin-top: 20px;
+}
+}
