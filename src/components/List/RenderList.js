@@ -1,4 +1,4 @@
-import { ListRender1, ListRender2, ListRender3 } from "./List"
+import { ListRender1, ListRender2, ListRender3, NumberList } from "./List"
 
 const RenderList = () => {
     const familyTree = {
@@ -44,6 +44,7 @@ const RenderList = () => {
         <ListRender1/>
         <ListRender2/>
         <ListRender3 a={familyTree}/>
+        <NumberList numbers={[1,2,3,4,5]} />
         </div>
     )
 

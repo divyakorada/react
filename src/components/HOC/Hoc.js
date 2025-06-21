@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
 
+/*function withBoarder(WrappedComponent) {
+  return function(props) {
+    return (
+      <div style={{ border: "2px solid blue", padding: "10px", borderRadius: "5px" }}>
+      <WrappedComponent {...props}/>
+      </div>
+    ) 
+  }
+}*/
 
 // // Higher-Order Component (HOC)
 const withBorder = (WrappedComponent) => {
@@ -10,7 +19,7 @@ const withBorder = (WrappedComponent) => {
         <div className="">
         <h3>HOC</h3>
         <div style={{ border: "2px solid blue", padding: "10px", borderRadius: "5px" }}>
-          <WrappedComponent {...props} />
+          <WrappedComponent {...props} hi='im divya'/>
         </div>
         </div>
     )};

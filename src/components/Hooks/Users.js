@@ -1,5 +1,5 @@
-import React from 'react';
-import useFetch from './CustomHook';
+import React, { useState } from 'react';
+import {useFetch, useCounter} from './CustomHook';
 
 const Users = () => {
     const { data, loading } = useFetch('https://jsonplaceholder.typicode.com/users');
@@ -27,4 +27,17 @@ const Users = () => {
 }
 
 
-export default Users;
+const CustomHookCounter = () => {
+    const {count, increment, decrement, reset} = useCounter(0)
+    return(
+        <>
+        <p>count: {count}</p>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+        <button onClick={reset}>Reset</button>
+        </>
+    )
+}
+
+
+export {Users, CustomHookCounter}

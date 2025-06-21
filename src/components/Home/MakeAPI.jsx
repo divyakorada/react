@@ -1,5 +1,5 @@
 import ShowUsers from "../FetchDataFromAPI/ShowUsers";
-import { AxiosPackage, Todos, UserList } from "../FetchDataFromAPI/Todos";
+import { AxiosPackage, Todos, UserList, TimerComponent } from "../FetchDataFromAPI/Todos";
 
 const MakeAPITab = () => {
     return(
@@ -10,6 +10,7 @@ const MakeAPITab = () => {
                     <AxiosPackage/>
                     <UserList/>
                   </div>
+                    <TimerComponent />
         </div>
     )
 }

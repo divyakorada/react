@@ -5,9 +5,16 @@ import { Text } from './ComponentB';
 const FunctionalParent = () => {
 
 const [dataFromChild, setDataFromChild] = useState('Hi Divya')
+const message ="Hello from Parent!";
+const [parentMessage, setParentMessage] = useState('Hello from Parent!');
+const [messageFromChild, setMessageFromChild] = useState('');
 
 const handleCallBack = (childData) => {
     setDataFromChild(childData);
+}
+
+const handleMessageChange = (newMessage) => {
+  setMessageFromChild(newMessage)
 }
   return (
     <div  className='dcw-ctn'>
@@ -15,7 +22,10 @@ const handleCallBack = (childData) => {
     <div>
         <h5>Parent</h5>
         <div>Data: {dataFromChild}</div>
-      <FunctionalChild headColor="green" infoColor="blue" onDataChange={handleCallBack}></FunctionalChild>
+        <div>Message from child: {messageFromChild}</div>
+      {/* <FunctionalChild headColor="green" infoColor="blue" onDataChange={handleCallBack}></FunctionalChild> */}
+      <FunctionalChild headColor="green" infoColor="blue" text={message}  data={parentMessage}
+       onDataChange={handleCallBack} onMessageChange={handleMessageChange}></FunctionalChild>
       <Text/>
     </div>
     </div>
@@ -23,3 +33,4 @@ const handleCallBack = (childData) => {
 }
 
 export default FunctionalParent
+// child to parent communication in react functional component AI

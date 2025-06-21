@@ -13,9 +13,10 @@ const HomeLayout = () => {
                 <NavLink to="HooksTab">Hooks</NavLink>
                 <NavLink to="PropsTab">Props</NavLink>
                 <NavLink to="ErrorBoundaryTab">ErrorBoundary</NavLink>
-                <NavLink to="ControlledUncontrolledTab">ControlledUncontrolledTab</NavLink>
-                <NavLink to="ListTab">ListTab</NavLink>
-                <NavLink to="PortalTab">PortalTab</NavLink>
+                <NavLink to="ControlledUncontrolledTab">ControlledUncontrolled</NavLink>
+                <NavLink to="ListTab">List</NavLink>
+                <NavLink to="PortalTab">Portal</NavLink>
+                <NavLink to="TodoListTab">Todos</NavLink>
             </nav>
             <hr/>
             <Outlet/> {/* nested Home render here */}

@@ -50,6 +50,9 @@ import ControlledUncontrolledTab from "./components/Home/Controlled & Uncontroll
 import MakeAPITab from "./components/Home/MakeAPI";
 import FormTab from "./components/Home/Form";
 import SearchFilter from "./components/Interview/SearchFilter";
+import Todolist from "./components/Todolist/Todolist";
+import UseReduceHook from "./components/Interview/UseReduceHook";
+import ListWithDelegation from "./components/Interview/EventDelegation";
 const LazyAbout  = lazy(() => import('./components/Authentication/About'));
 
 
@@ -61,6 +64,68 @@ function App() {
     window.scrollTo(0, 0); // Ensure page always starts at the top
   }, []);
   //console.log(useCount)
+       function isBalancedBrackets(str) {
+    let stack = [];
+    let bracketsMap = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
+
+    for (let char of str) {
+      //debugger;
+        if (Object.values(bracketsMap).includes(char)) {
+            stack.push(char);
+        } else if (Object.keys(bracketsMap).includes(char)) {
+          console.log(stack.length === 0);
+          console.log(stack.pop());
+            if (stack.length === 0 || stack.pop() !== bracketsMap[char]) {
+                return false;
+            }
+        }
+    }
+    return stack.length === 0;
+}
+
+// Example usage
+console.log(isBalancedBrackets("{[()]}")); // true
+
+const obj = {
+  b: 2,
+  a: 1,
+  c: 3
+};
+
+// Sort keys
+
+const sortedObj = Object.keys(obj)
+  .sort()
+  .reduce((acc, key) => {
+    acc[key] = obj[key];
+    return acc;
+  }, {});
+
+console.log(sortedObj);
+
+function twoSum(nums, target) {
+  const seen = new Map();
+
+  for (let num of nums) {
+  //  debugger
+    const complement = target - num;
+    if (seen.has(complement)) {
+      return [complement, num];
+    }
+    seen.set(num, true);
+  }
+
+  return []; // if no pair found
+}
+
+twoSum([2, 7, 11, 15], 9);
+
+
+
   return (
     <div className="App">
       <div id="portal-root"></div>
@@ -82,6 +147,7 @@ function App() {
               <Route path= "ControlledUncontrolledTab" element={<ControlledUncontrolledTab />}></Route>
               <Route path= "ListTab" element={<ListTab />}></Route>
               <Route path= "PortalTab" element={<PortalTab />}></Route>
+              <Route path= "TodoListTab" element={<Todolist />}></Route>
             </Route>
           {/* Home and its nested routes */}  
           {/* Interview and its nested routes */}
@@ -91,6 +157,8 @@ function App() {
             <Route path= "round2" element={<Round2 />}></Route>
             <Route path= "round3" element={<Round3 />}></Route>
             <Route path= "SearchFilter" element={<SearchFilter />}></Route>
+            <Route path= "useReduceHook" element={<UseReduceHook />}></Route>
+            <Route path= "event-delegation" element={<ListWithDelegation />}></Route>
           </Route>
           {/* Interview and its nested routes */}
           

@@ -78,4 +78,14 @@ return(
   )
 }
 
-export { ListRender1, ListRender2, ListRender3 };
+function NumberList({numbers}) {
+  const listItems = numbers?.map((number) => (
+    <li key={number.toString()}>{number}</li>
+  ));
+
+  return <ul>{listItems}</ul>
+}
+
+
+
+export { ListRender1, ListRender2, ListRender3, NumberList };

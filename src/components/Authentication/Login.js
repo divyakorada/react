@@ -7,8 +7,10 @@ export const Login = () => {
   const auth = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
-
+  console.log('location', location)
   const redirectPath = location.state?.path || '/'
+ // console.log('redirectPath', location.state?.path)
+
 
   const handleLogin = () => {
     console.log('hi')

@@ -1,5 +1,39 @@
 import { useMemo, useState, memo, React, useCallback } from "react";
 
+
+const ChildMemo = memo(({ message }) => {
+  console.log("MyComponent rendered");
+  return (
+  <>
+      <p>{message}</p>
+    </>
+  )
+  
+});
+
+const ReactMemoExample3 = () => {
+  const [text, setText] = useState("Initial Text");
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setText(text === "Initial Text" ? "New Text" : "Initial Text");
+  };
+  const handleCount = () => {
+    setCount((prev) => prev + 1);
+  };
+
+  return (
+    <div className="reactmemo-example">
+      <ChildMemo message={text} />
+      <button onClick={handleClick}>Change text</button>
+      <p>{count}</p>
+      <button onClick={handleCount}>Increment</button>
+    </div>
+  );
+}
+
+
+
 const Child = memo(({ userInfo }) => {
   console.log("Child component rendered 2");
   return <p>User: {userInfo.name}</p>;
@@ -84,7 +118,7 @@ function ReactMemoExampleItemList() {
   );
 }
 
-export { ReactMemoExample1, ReactMemoExample2, ReactMemoExampleItemList };
+export { ReactMemoExample1, ReactMemoExample2, ReactMemoExampleItemList, ReactMemoExample3 };
 
 // https://www.geeksforgeeks.org/difference-between-react-memo-and-usememo-in-react/#what-is-reactmemo-
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../Styles/Form.css'
 
-const Form = () => {
+const Form2 = () => {
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -24,43 +24,44 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newErrors = validateForm(formData)
-        setErrors(newErrors);
-        console.log('newErrors', (newErrors));
+      //  const newErrors = validateForm(formData)
+        // setErrors(newErrors);
+        // console.log('newErrors', (newErrors));
 
-        if(Object.keys(newErrors).length === 0) {
+        if(validateForm()) {
             console.log('Form submitted successfully')
         } else {
             console.log('Form submission failed due to validation errors.')
         }
     }
 
-    const validateForm = (data) => {
-        const errors = {};
+    const validateForm = () => {
+        const newErrors = {};
      //   console.log('data', data);
 
-        if(!data.username.trim()) {
-            errors.username = 'Username is required'
-        } else if(data.username.length < 4) {
-            errors.username = 'Username must be at least 4 characters long'
+        if(!formData.username.trim()) {
+            newErrors.username = 'Username is required'
+        } else if(formData.username.length < 4) {
+            newErrors.username = 'Username must be at least 4 characters long'
         }
-        if(!data.email.trim()) {
-            errors.email = "email is required"
-        } else if(!/\S+@\S+\.\S+/.test(data.email)) {
-            errors.email = 'Email is invalid'
-        }
-
-        if(!data.password.trim()) {
-            errors.password = "Password is required"
-        } else if(data.password.length < 8) {
-            errors.password = "Password must be atleat 8 characters long"
+        if(!formData.email.trim()) {
+            newErrors.email = "email is required"
+        } else if(!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Email is invalid'
         }
 
-        if(data.confirmPassword !== data.password) {
-            errors.confirmPassword = "Passwords do not match"
+        if(!formData.password.trim()) {
+            newErrors.password = "Password is required"
+        } else if(formData.password.length < 8) {
+            newErrors.password = "Password must be atleat 8 characters long"
+        }
+
+        if(formData.confirmPassword !== formData.password) {
+            newErrors.confirmPassword = "Passwords do not match"
         }
         
-        return errors;
+         setErrors(newErrors)
+         return Object.keys(newErrors).length === 0;
     }
 
   return (
@@ -143,7 +144,7 @@ const Form = () => {
   )
 }
 
-export default Form
+export default Form2
 
 /*/
 https://stackblitz.com/edit/base-angular-12-app-kwhxggzy?file=src%2Fapp%2Fapp.component.html,src%2Fapp%2Fapp.component.ts

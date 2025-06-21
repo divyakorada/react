@@ -8,7 +8,7 @@ const Child = React.memo(({ a }) => {
 const UseCallbackEample1 = () => {
   const [count, setCount] = useState(0);
 
-  // Function is created every render, causing Child to re-render
+  // If we not using usecallback Function is created every render, causing Child to re-render
   const handleClick = useCallback(() => {
     console.log("Button clicked!");
   }, []);

@@ -5,7 +5,7 @@ import {
   UseMemoExample3,
   UseMemoExample4,
 } from "./useMemo";
-import { ReactMemoExample1, ReactMemoExample2, ReactMemoExampleItemList } from "./ReactMemo";
+import { ReactMemoExample1, ReactMemoExample2, ReactMemoExample3, ReactMemoExampleItemList } from "./ReactMemo";
 import {
   UseCallbackEample1,
   UseCallbackExample2,
@@ -19,7 +19,7 @@ import {
   ThemeProvider,
 } from "./useContext";
 import { Counter, InputFocus, HighlightTextarea, ButtonClick, MyRefClassComponent } from "./useRef";
-import Users from "./Users"
+import {Users, CustomHookCounter}  from "./Users"
 
 const Hooks = () => {
   return (
@@ -52,7 +52,7 @@ const Hooks = () => {
       <div className="hooks__outerCtn">
         <h3>React.memo()</h3>
         <div className="flex">
-          {[ReactMemoExample1, ReactMemoExample2, ReactMemoExampleItemList].map((Component, index) => {
+          {[ReactMemoExample3, ReactMemoExample1, ReactMemoExample2, ReactMemoExampleItemList].map((Component, index) => {
             return (
               <div className="hooks__ctn" key={index}>
                 <Component />
@@ -105,6 +105,7 @@ const Hooks = () => {
         <div className="hooks__usecontext flex">
          <Users />
         </div>
+         <CustomHookCounter />
       </div>
 
     </div>

@@ -1,5 +1,7 @@
-import { useMemo, useState, memo, useEffect } from "react";
+import { useMemo, useState } from "react";
 
+/* useMemo is used to memoize the result of a computation. it will only recompute the value if its dependencies changed. This can be
+usefull for optimizing the app performance when dealing withe expensive computations/large data sets*/
 //https://www.geeksforgeeks.org/react-js-usememo-hook/ (wrong) give fix using memo) not understand
 const Child = ({ userInfo }) => {
   console.log("UseMemo() Child component rendered1");
@@ -11,9 +13,11 @@ function UseMemoExample1() {
   const userInfo = useMemo(
     () => ({
       name: "Geeks for Geeks",
+      createdAt: Date.now(),
     }),
     []
   );
+  console.log("userInfo created at:", userInfo.createdAt);
 
   return (
     <div className="usememo__ctn">
@@ -34,6 +38,7 @@ const UseMemoExample2 = () => {
     console.log("UseMemo() expensiveCalculation1");
     return count * 2;
   }, [count]);
+  console.log("Component re-rendered");
 
   return (
     <div>
@@ -50,7 +55,6 @@ const UseMemoExample2 = () => {
     </div>
   );
 };
-
 
 //Example 3
 //https://stackblitz.com/edit/react-simple-code-editor-hnpdyizx?file=src%2FApp.js

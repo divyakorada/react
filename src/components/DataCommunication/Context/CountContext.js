@@ -10,7 +10,7 @@ const CountProvider = ({children, initialValue=111}) => {
     return(
         <CountContext.Provider value={{count, setCount}}>
             {children}
-        </CountContext.Provider>
+        </CountContext.Provider> 
     )
 }
 
