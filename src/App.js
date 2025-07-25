@@ -53,6 +53,7 @@ import SearchFilter from "./components/Interview/SearchFilter";
 import Todolist from "./components/Todolist/Todolist";
 import UseReduceHook from "./components/Interview/UseReduceHook";
 import ListWithDelegation from "./components/Interview/EventDelegation";
+import LargeDataSet from "./components/Interview/LargeDataSet";
 const LazyAbout  = lazy(() => import('./components/Authentication/About'));
 
 
@@ -107,23 +108,29 @@ const sortedObj = Object.keys(obj)
 
 console.log(sortedObj);
 
-function twoSum(nums, target) {
-  const seen = new Map();
+// function twoSum(nums, target) {
+//   const seen = new Map();
 
-  for (let num of nums) {
-  //  debugger
-    const complement = target - num;
-    if (seen.has(complement)) {
-      return [complement, num];
-    }
-    seen.set(num, true);
-  }
+//   for (let num of nums) {
+//   //  debugger
+//     const complement = target - num;
+//     if (seen.has(complement)) {
+//       return [complement, num];
+//     }
+//     seen.set(num, true);
+//   }
 
-  return []; // if no pair found
+//   return []; // if no pair found
+// }
+
+// twoSum([2, 7, 11, 15], 9);
+
+function recur(n) {
+    if(n === 0 || n === 1) return 1;
+    return  n * recur(n - 1);
 }
 
-twoSum([2, 7, 11, 15], 9);
-
+recur(4);
 
 
   return (
@@ -159,6 +166,8 @@ twoSum([2, 7, 11, 15], 9);
             <Route path= "SearchFilter" element={<SearchFilter />}></Route>
             <Route path= "useReduceHook" element={<UseReduceHook />}></Route>
             <Route path= "event-delegation" element={<ListWithDelegation />}></Route>
+             <Route path="large-dataset" element={<LargeDataSet />} />
+            <Route path="large-dataset/:id" element={<LargeDataSet />} />
           </Route>
           {/* Interview and its nested routes */}
           

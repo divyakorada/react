@@ -8,6 +8,7 @@ const InputFocus = () => {
             inputRef.current.focus()
         }
     };
+    console.log('useRef parent')
 
     return(
     <div className="hooks__ctn">

@@ -11,6 +11,7 @@ const InterviewLayout = () => {
                 <NavLink to="searchFilter">Search Filter</NavLink>
                 <NavLink to="useReduceHook">useReduce</NavLink>
                 <NavLink to="event-delegation">Event Delegation</NavLink>
+                <NavLink to="large-dataset">Large Dataset</NavLink>
             </nav>
             <hr/>
             <Outlet/> {/* nested interview rounds render here */}
