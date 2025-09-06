@@ -17,6 +17,8 @@ const HomeLayout = () => {
                 <NavLink to="ListTab">List</NavLink>
                 <NavLink to="PortalTab">Portal</NavLink>
                 <NavLink to="TodoListTab">Todos</NavLink>
+                <NavLink to="ToolkitTab">Toolkit</NavLink>
+                <NavLink to="tanstackTab">Tanstack Query</NavLink>
             </nav>
             <hr/>
             <Outlet/> {/* nested Home render here */}

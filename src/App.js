@@ -33,6 +33,7 @@ import { AuthProvider } from "./components/Authentication/auth";
 import { Login } from "./components/Authentication/Login";
 import { Navbar } from "./components/Authentication/Navbar";
 import RequireAuth from "./components/Authentication/RequireAuth";
+
 import Round1 from "./components/Interview/Round1";
 import Round2 from "./components/Interview/Round2";
 import Round3 from "./components/Interview/Round3";
@@ -54,7 +55,10 @@ import Todolist from "./components/Todolist/Todolist";
 import UseReduceHook from "./components/Interview/UseReduceHook";
 import ListWithDelegation from "./components/Interview/EventDelegation";
 import LargeDataSet from "./components/Interview/LargeDataSet";
+import Toolkit from "./components/Interview/Toolkit";
+import QueryExample from "./components/FetchDataFromAPI/tanstackQuery";
 const LazyAbout  = lazy(() => import('./components/Authentication/About'));
+
 
 
 function App() {
@@ -155,6 +159,8 @@ recur(4);
               <Route path= "ListTab" element={<ListTab />}></Route>
               <Route path= "PortalTab" element={<PortalTab />}></Route>
               <Route path= "TodoListTab" element={<Todolist />}></Route>
+              <Route path= "ToolkitTab" element={<Toolkit />}></Route>
+              <Route path= "tanstackTab" element={<QueryExample />}></Route>
             </Route>
           {/* Home and its nested routes */}  
           {/* Interview and its nested routes */}
@@ -188,6 +194,7 @@ recur(4);
             <Route path="login" element={<Login />} />
           </Routes>
         </BrowserRouter>
+        
       </AuthProvider>
 
      {/* <header className="App-header">
